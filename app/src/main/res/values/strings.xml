@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">Filme</string>
     <string name="app_name">Safe Savings</string>
     <string name="search">Search</string>
 </resources>
