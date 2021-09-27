@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.catalogmovie2"
+        applicationId "com.example.safesavings"
         minSdk 23
         targetSdk 31
         versionCode 1
