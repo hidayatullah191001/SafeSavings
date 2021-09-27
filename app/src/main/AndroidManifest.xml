@@ -18,6 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SafeSavings.NoActionBarAndStatusBar">
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.SafeSavings.NoActionBarAndStatusBar"
@@ -31,6 +33,15 @@
         <activity
             android:name=".DetailMovieActivity"
             android:theme="@style/Theme.SafeSavings.NoActionBarAndStatusBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailMovieActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
