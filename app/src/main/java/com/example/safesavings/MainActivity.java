@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView1.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
         recyclerView2 = findViewById(R.id.rvLatest);
-        recyclerView1.setHasFixedSize(true);
-        recyclerView1.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
         getDataFromSeason();
     }
