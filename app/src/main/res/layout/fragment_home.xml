@@ -35,7 +35,6 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_latest" />
 
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
