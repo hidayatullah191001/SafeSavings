@@ -51,22 +51,22 @@ public class FragmentHome extends Fragment {
     }
     private void getDataFromSeason() {
         ApiService.endPoint().getDataSeason()
-            .enqueue(new Callback<Response>() {
-                @Override
-                public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                    if (response.isSuccessful()){
-                        List<Season> mSeason = response.body().getSeason();
-                        adapterSeason = new SeasonAnimeAdapter(getActivity(),mSeason);
-                        recyclerView1.setAdapter(adapterSeason);
-                        List<Latest> mLatest = response.body().getLatest();
-                        adapterLatest = new LatestAnimeAdapter(getActivity(), mLatest);
-                        recyclerView2.setAdapter(adapterLatest);
+                .enqueue(new Callback<Response>() {
+                    @Override
+                    public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                        if (response.isSuccessful()){
+                            List<Season> mSeason = response.body().getSeason();
+                            adapterSeason = new SeasonAnimeAdapter(getActivity(),mSeason);
+                            recyclerView1.setAdapter(adapterSeason);
+                            List<Latest> mLatest = response.body().getLatest();
+                            adapterLatest = new LatestAnimeAdapter(getActivity(), mLatest);
+                            recyclerView2.setAdapter(adapterLatest);
+                        }
                     }
-                }
-                @Override
-                public void onFailure(Call<Response> call, Throwable t) {
+                    @Override
+                    public void onFailure(Call<Response> call, Throwable t) {
 
-                }
-            });
+                    }
+                });
     }
 }

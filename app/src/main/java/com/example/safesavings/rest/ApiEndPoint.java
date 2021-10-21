@@ -6,6 +6,10 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface ApiEndPoint{
-    @GET("https://samehadaku-rest-api.herokuapp.com")
+
+    @GET("/")
     Call<Response> getDataSeason();
+
+    @GET("/search/{title}/")
+    Call<Response> getDataSearch(@Path("title") String title);
 }

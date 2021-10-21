@@ -7,19 +7,23 @@
     tools:context=".MainActivity"
     android:background="#fff">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:id="@+id/bottom_navigation_menu"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_menu"
-        app:itemIconTint="#fff"/>
-
     <FrameLayout
         android:id="@+id/container_fragment"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation_menu"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_menu"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_navigation_menu"/>
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_menu"
+        app:itemIconTint="#fff"/>
 
 </RelativeLayout>

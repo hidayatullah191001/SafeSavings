@@ -28,4 +28,18 @@ public class Response {
     public void setLatest(List<Latest> latest) {
         this.latest = latest;
     }
+
+    @SerializedName("results")
+    @Expose
+    private List<Search> search = null;
+
+    public List<Search> getResults() {
+        return search;
+    }
+
+    public void setResults(List<Search> search) {
+        this.search = search;
+    }
+
+
 }
