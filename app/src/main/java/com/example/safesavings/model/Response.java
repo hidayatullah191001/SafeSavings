@@ -28,7 +28,7 @@ public class Response {
     public void setLatest(List<Latest> latest) {
         this.latest = latest;
     }
-
+    ///Searching///
     @SerializedName("results")
     @Expose
     private List<Search> search = null;
@@ -40,6 +40,8 @@ public class Response {
     public void setResults(List<Search> search) {
         this.search = search;
     }
+    //end searching//
+
 
 
 }

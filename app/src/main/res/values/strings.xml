@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Filme</string>
     <string name="search">Search</string>
+    <string name="tentang_aplikasi">Filme merupakan aplikasi film anime yang terlengkap dan selalu ter update
+    setiap harinya. Aplikasi ini dibuat berdasarkan laman samehadaku.care.</string>
 </resources>
