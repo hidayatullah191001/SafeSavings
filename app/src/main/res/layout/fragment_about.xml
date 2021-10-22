@@ -15,13 +15,168 @@
         android:background="@drawable/bg" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/txtAbout"
-        android:text="Halaman About"
-        android:textSize="30sp"
-        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="156dp"
         android:gravity="center"
-        android:layout_marginTop="250dp"/>
+        android:text="TENTANG APLIKASI"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tentangaplikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:text="@string/tentang_aplikasi"
+        android:textColor="#000"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/pengembang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="309dp"
+        android:gravity="center"
+        android:text="PENGEMBANG"
+        android:textColor="#000"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/namaliwi"
+        android:layout_width="167dp"
+        android:layout_height="67dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-13dp"
+        android:layout_marginBottom="123dp"
+        android:gravity="center"
+        android:text="Liwinantia Salsabilah"
+        android:textColor="#000"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/nimliwi"
+        android:layout_width="167dp"
+        android:layout_height="67dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-14dp"
+        android:layout_marginBottom="104dp"
+        android:gravity="center"
+        android:text="09031181924028"
+        android:textColor="#000"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/namajihan"
+        android:layout_width="167dp"
+        android:layout_height="67dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="123dp"
+        android:gravity="center"
+        android:text="Jihan Atori"
+        android:textColor="#000"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/nimjihan"
+        android:layout_width="167dp"
+        android:layout_height="67dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="104dp"
+        android:gravity="center"
+        android:text="09031181924019"
+        android:textColor="#000"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/namadayat"
+        android:layout_width="167dp"
+        android:layout_height="67dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="270dp"
+        android:layout_marginBottom="123dp"
+        android:gravity="center"
+        android:text="Hidayatullah"
+        android:textColor="#000"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/nimdayat"
+        android:layout_width="167dp"
+        android:layout_height="67dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="280dp"
+        android:layout_marginBottom="103dp"
+        android:gravity="center"
+        android:text="09031281924049"
+        android:textColor="#000"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/liwi"
+        android:layout_width="118dp"
+        android:layout_height="118dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="182dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/liwi" />
+
+    <ImageView
+        android:id="@+id/jihan"
+        android:layout_width="118dp"
+        android:layout_height="118dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="182dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/jihan" />
+
+    <ImageView
+        android:id="@+id/dayat"
+        android:layout_width="118dp"
+        android:layout_height="118dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="269dp"
+        android:layout_marginBottom="181dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/dayat" />
+
 
 </RelativeLayout>
