@@ -32,6 +32,9 @@
             android:name=".DetailMovieActivity"
             android:theme="@style/Theme.SafeSavings.NoActionBarAndStatusBar"
             android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
 
     </application>

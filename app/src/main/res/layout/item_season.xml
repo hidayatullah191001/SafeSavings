@@ -45,6 +45,17 @@
                 android:maxLines="4"
                 android:text="INI DEKSRIPSI MOVIE" />
 
+            <TextView
+                android:id="@+id/animeId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDescription"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/imgMovie"
+                android:maxLines="4"
+                android:text="INI ID ANIME" />
+
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

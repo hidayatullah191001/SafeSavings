@@ -24,6 +24,7 @@
         android:background="@color/colorPrimary"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_menu"
+        app:itemIconSize="30dp"
         app:itemIconTint="#fff"/>
 
 </RelativeLayout>

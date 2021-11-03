@@ -33,10 +33,9 @@ import retrofit2.Callback;
 public class FragmentHome extends Fragment {
     private SeasonAnimeAdapter adapterSeason;
     private LatestAnimeAdapter adapterLatest;
-    private SearchView searchView;
     RecyclerView recyclerView1;
     RecyclerView recyclerView2;
-    ApiEndPoint apiInterface;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
