@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <TextView
+        android:id="@+id/episode"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/shape_view_detail"
+        android:gravity="center"
+        android:text="223"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/title_episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@+id/episode"
+        android:text="Boruto Episode 223"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/date_uploaded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_episode"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/episode"
+        android:text="Tanggal Rilis : "
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/txtDate_uploaded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_episode"
+        android:layout_marginStart="5dp"
+        android:layout_toRightOf="@+id/date_uploaded"
+        android:textColor="@color/white"
+        android:text="7 November 2021 "
+        android:textSize="12sp" />
+
+</RelativeLayout>

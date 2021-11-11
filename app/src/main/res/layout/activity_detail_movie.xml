@@ -1,88 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
     tools:context=".DetailMovieActivity"
-    android:background="#e1e1e1"
-    >
-    <ImageView
-        android:id="@+id/bg"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/warnagradasi" />
-
-    <ImageView
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:alpha="0.3"/>
-
+    android:background="#222222">
     <RelativeLayout
-        android:id="@+id/layoutDetail"
+        android:id="@+id/rldetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:padding="20dp">
 
         <ImageView
             android:id="@+id/imgDetailAnime"
             android:layout_width="wrap_content"
             android:layout_height="182dp"
-            android:layout_marginLeft="-10dp"
+            android:layout_centerHorizontal="true"
             tools:srcCompat="@tools:sample/avatars" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgDetailAnime"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="#333333"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/bintang1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/bintang" />
+
+                <TextView
+                    android:id="@+id/txtViewAnime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/bintang1"
+                    android:gravity="center"
+                    android:text="7.0"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtgaring"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/txtViewAnime"
+                    android:gravity="center"
+                    android:text="/"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtratingcount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@id/txtgaring"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/bintang2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toRightOf="@id/txtratingcount"
+                    android:src="@drawable/bintang" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/txtJudulAnime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_toRightOf="@+id/imgDetailAnime"
+            android:layout_below="@id/cardRating"
+            android:layout_marginTop="10dp"
             android:text="INI JUDUL"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtratingvalue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtJudulAnime"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="25dp"
-            android:layout_toRightOf="@+id/imgDetailAnime"
-            android:text="Rating : "
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/txtViewAnime"
-            android:layout_width="67dp"
-            android:layout_height="36dp"
-            android:layout_below="@id/txtJudulAnime"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="24dp"
-            android:layout_toEndOf="@id/txtratingvalue"
-            android:background="@drawable/shape_button"
-            android:text="view"
-            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/txtDetailDeskripsi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgDetailAnime"
+            android:layout_below="@id/txtJudulAnime"
             android:layout_marginTop="16dp"
             android:justificationMode="inter_word"
             android:text="Deskripsi Movie"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-    </RelativeLayout>
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTabelDetail"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="#333333"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            android:layout_below="@id/txtDetailDeskripsi">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtJapan"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="Japanaese"/>
+
+                    <TextView
+                        android:id="@+id/valJapan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@+id/txtJapan"
+                        android:text="古見さんは、コミュ症です。"
+                        android:textColor="@color/white" />
 
 
+                    <TextView
+                        android:id="@+id/txtEnglish"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtJapan"
+                        android:text="English"
+                        android:textColor="@color/white" />
 
-</RelativeLayout>
+                    <TextView
+                        android:id="@+id/valEnglish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/valJapan"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@+id/txtJapan"
+                        android:text="Komi Can't Communicat"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+            </ScrollView>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardTabelDetail"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="#333333"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListEpisode"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/txtDetailDeskripsi"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical"
+                tools:listitem="@layout/item_list_episode" />
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+</ScrollView>

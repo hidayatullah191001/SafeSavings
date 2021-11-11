@@ -15,12 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.safesavings.R;
-import com.example.safesavings.adapter.LatestAnimeAdapter;
 import com.example.safesavings.adapter.SearchAnimeAdapter;
-import com.example.safesavings.adapter.SeasonAnimeAdapter;
-import com.example.safesavings.model.Latest;
 import com.example.safesavings.model.Search;
-import com.example.safesavings.model.Season;
 import com.example.safesavings.rest.ApiService;
 
 import java.util.List;

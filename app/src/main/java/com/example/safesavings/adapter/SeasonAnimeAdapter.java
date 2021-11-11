@@ -58,8 +58,8 @@ public class SeasonAnimeAdapter extends RecyclerView.Adapter<SeasonAnimeAdapter.
         String rating = seasonList.get(position).getRating();
 
         holder.tvTitle.setText(title);
+        holder.ratingSeason.setText(rating);
         holder.tvDescription.setText(deskripsi);
-        holder.animeid.setText(parseUrlToGetId(url));
 
         Glide.with(context).
                 load(image).
@@ -67,7 +67,7 @@ public class SeasonAnimeAdapter extends RecyclerView.Adapter<SeasonAnimeAdapter.
 
         String id = parseUrlToGetId(url);
 
-        holder.tvTitle.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailMovieActivity.class);
@@ -101,14 +101,14 @@ public class SeasonAnimeAdapter extends RecyclerView.Adapter<SeasonAnimeAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPoster;
-        TextView tvTitle, tvDescription, animeid;
+        TextView tvTitle, tvDescription, ratingSeason;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPoster = itemView.findViewById(R.id.imgMovie);
             tvTitle = itemView.findViewById(R.id.tvTitle);
+            ratingSeason = itemView.findViewById(R.id.rating_season);
             tvDescription = itemView.findViewById(R.id.tvDescription);
-            animeid = itemView.findViewById(R.id.animeId);
         }
     }
 }

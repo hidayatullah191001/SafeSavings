@@ -10,16 +10,29 @@
         <entry key="..\:/Belajar Ngoding/Android/SafeSavings/app/src/main/res/layout/item_movie.xml" value="0.209375" />
         <entry key="..\:/Belajar Ngoding/Android/SafeSavings/app/src/main/res/layout/item_season.xml" value="0.209375" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/drawable/about.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/drawable/bottom_navigation_selector.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/drawable/home.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/drawable/ic_search.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/drawable/list.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/drawable/shadow.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/drawable/shape_View.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/drawable/shape_button.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/drawable/shape_view.xml" value="0.22552083333333334" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/drawable/shape_view_detail.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/activity_detail_movie.xml" value="0.25" />
-        <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/activity_main.xml" value="0.20759962928637626" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/activity_splash_screen.xml" value="0.209375" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/fragment_about.xml" value="0.209375" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/fragment_banner_slider.xml" value="0.209375" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/fragment_list.xml" value="0.209375" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/fragment_search.xml" value="0.20615384615384616" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/item_carousel_banner.xml" value="0.209375" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/item_list_anime.xml" value="0.20615384615384616" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/item_list_episode.xml" value="0.9" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/item_search.xml" value="0.33" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/item_season.xml" value="0.33" />
+        <entry key="..\:/Project/SafeSavings/app/src/main/res/layout/table_list_detail.xml" value="0.209375" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/menu/bottom_menu.xml" value="0.209375" />
         <entry key="..\:/Project/SafeSavings/app/src/main/res/menu/main_menu.xml" value="0.209375" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/SafeSavings/app/src/main/res/drawable/about.xml" value="0.21614583333333334" />
