@@ -89,8 +89,45 @@ public class DetailMovieActivity extends AppCompatActivity {
                             txtRatingCount.setText(valRatingCount);
 
                             DetailAnime mDetail = response.body().getDetail();
-                            String valtotalepisode = mDetail.getTotalEpisode();
-                            Log.d(TAG, "onResponse: " + valtotalepisode);
+                            String isiJapanese = mDetail.getJapanese();
+                            TextView valJapanese = findViewById(R.id.valJapan);
+                            valJapanese.setText(isiJapanese);
+
+                            String isiType = mDetail.getType();
+                            TextView valType = findViewById(R.id.valType);
+                            valType.setText(isiType);
+
+                            String isiDuration = mDetail.getDuration();
+                            TextView valDuration = findViewById(R.id.valDuration);
+                            valDuration.setText(isiDuration);
+
+                            String isiSeason = mDetail.getSeason();
+                            TextView valSeason = findViewById(R.id.valSeason);
+                            valSeason.setText(isiSeason);
+
+                            String isiProducers = mDetail.getProducers();
+                            TextView valProducers = findViewById(R.id.valProducers);
+                            valProducers.setText(isiProducers);
+
+                            String isiStatus = mDetail.getStatus();
+                            TextView valStatus = findViewById(R.id.valStatus);
+                            valStatus.setText(isiStatus);
+
+                            String isiSource = mDetail.getSource();
+                            TextView valSource = findViewById(R.id.valSource);
+                            valSource.setText(isiSource);
+
+                            String isiTotalEpisode = mDetail.getTotalEpisode();
+                            TextView valTotalEpisode = findViewById(R.id.valTotalEpisode);
+                            valTotalEpisode.setText(isiTotalEpisode);
+
+                            String isiStudio = mDetail.getStudio();
+                            TextView valStudio = findViewById(R.id.valStudio);
+                            valStudio.setText(isiStudio);
+
+                            String isiRilis = mDetail.getRilis();
+                            TextView valRilis = findViewById(R.id.valRilis);
+                            valRilis.setText(isiRilis);
                         }
                     }
                     @Override

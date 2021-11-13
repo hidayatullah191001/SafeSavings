@@ -113,16 +113,13 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardTabelDetail"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             app:cardBackgroundColor="#333333"
             app:cardCornerRadius="8dp"
             app:cardElevation="0dp"
             android:layout_below="@id/txtDetailDeskripsi">
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fillViewport="true">
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -140,31 +137,172 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginStart="20dp"
-                        android:layout_toRightOf="@+id/txtJapan"
-                        android:text="古見さんは、コミュ症です。"
+                        android:layout_toRightOf="@id/txtJapan"
                         android:textColor="@color/white" />
 
-
                     <TextView
-                        android:id="@+id/txtEnglish"
+                        android:id="@+id/txtType"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/txtJapan"
-                        android:text="English"
+                        android:layout_below="@id/valJapan"
+                        android:text="Type"
                         android:textColor="@color/white" />
 
                     <TextView
-                        android:id="@+id/valEnglish"
+                        android:id="@+id/valType"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/valJapan"
+                        android:layout_below="@id/valJapan"
                         android:layout_alignParentRight="true"
                         android:layout_marginStart="20dp"
-                        android:layout_toRightOf="@+id/txtJapan"
-                        android:text="Komi Can't Communicat"
+                        android:layout_toRightOf="@id/txtType"
                         android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtDuration"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valType"
+                        android:text="Duration"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/valDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valType"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/txtDuration"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtSeason"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtDuration"
+                        android:text="Season"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/valSeason"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valDuration"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/txtSeason"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtProducers"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valSeason"
+                        android:text="Producers"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/valProducers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valSeason"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/txtProducers"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtStatus"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valProducers"
+                        android:text="Status"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/valStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valProducers"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/txtStatus"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtSource"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtStatus"
+                        android:text="Source"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/valSource"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valStatus"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/txtSource"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtTotalEpisode"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valSource"
+                        android:text="TotalEpisode"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/valTotalEpisode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valSource"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/txtTotalEpisode"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtStudio"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valTotalEpisode"
+                        android:text="Studio"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/valStudio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valTotalEpisode"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/txtStudio"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtRilis"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valStudio"
+                        android:text="Rilis"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/valRilis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/valStudio"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/txtRilis"
+                        android:textColor="@color/white" />
+
                 </RelativeLayout>
-            </ScrollView>
         </androidx.cardview.widget.CardView>
 
 
