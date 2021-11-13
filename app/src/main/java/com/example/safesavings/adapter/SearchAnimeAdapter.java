@@ -1,6 +1,7 @@
 package com.example.safesavings.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.safesavings.DetailMovieActivity;
 import com.example.safesavings.R;
 import com.example.safesavings.model.Search;
 import com.example.safesavings.model.Season;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SearchAnimeAdapter extends RecyclerView.Adapter<SearchAnimeAdapter.MyViewHolder> {
 
@@ -39,13 +43,54 @@ public class SearchAnimeAdapter extends RecyclerView.Adapter<SearchAnimeAdapter.
         return viewHolder;
     }
 
+    public static final String EXTRA_MESSAGE1 = "com.example.safesavings.MESSAGE1";
+    public static final String EXTRA_MESSAGE2 = "com.example.safesavings.MESSAGE2";
+    public static final String EXTRA_MESSAGE3 = "com.example.safesavings.MESSAGE3";
+    public static final String EXTRA_MESSAGE4 = "com.example.safesavings.MESSAGE4";
+    public static final String EXTRA_MESSAGE5 = "com.example.safesavings.MESSAGE5";
+
     @Override
     public void onBindViewHolder(@NonNull SearchAnimeAdapter.MyViewHolder holder, int position) {
-        holder.tvTitle.setText(searchList.get(position).getTitle());
-        holder.tvDescription.setText(searchList.get(position).getSinopsis());
+        String url = searchList.get(position).getLinkId();
+        String title = "Nonton " +searchList.get(position).getTitle();
+        String deskripsi = searchList.get(position).getSinopsis();
+        String image = searchList.get(position).getImage();
+        String rating = searchList.get(position).getScore();
+
+        holder.tvTitle.setText(title);
+        holder.ratingSeason.setText(rating);
+        holder.tvDescription.setText(deskripsi);
+
         Glide.with(context).
-                load(searchList.get(position).getImage()).
+                load(image).
                 into(holder.imgPoster);
+
+        String id = parseUrlToGetId(url);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailMovieActivity.class);
+                intent.putExtra(EXTRA_MESSAGE1, id);
+                intent.putExtra(EXTRA_MESSAGE2, title);
+                intent.putExtra(EXTRA_MESSAGE3, deskripsi);
+                intent.putExtra(EXTRA_MESSAGE4, image);
+                intent.putExtra(EXTRA_MESSAGE5, rating);
+                context.startActivity(intent);
+            }
+        });
+    }
+
+    public static String parseUrlToGetId(String urll)
+    {
+        String url = urll;
+        Pattern p = Pattern.compile("/anime/(.+)/");
+        Matcher m = p.matcher(url);
+        if (m.find()){
+            String result = m.group(1);
+            return result;
+        }else{
+            return url;
+        }
     }
 
     @Override
@@ -55,12 +100,14 @@ public class SearchAnimeAdapter extends RecyclerView.Adapter<SearchAnimeAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPoster;
-        TextView tvTitle, tvDescription;
+        TextView tvTitle, tvDescription, ratingSeason;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPoster = itemView.findViewById(R.id.imgMovie);
             tvTitle = itemView.findViewById(R.id.tvTitle);
+            tvTitle = itemView.findViewById(R.id.tvTitle);
+            ratingSeason = itemView.findViewById(R.id.rating_season);
             tvDescription = itemView.findViewById(R.id.tvDescription);
         }
     }

@@ -6,9 +6,13 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.safesavings.fragment.FragmentAbout;
 import com.example.safesavings.fragment.FragmentHome;
@@ -18,6 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,15 +45,27 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.menu_home:
                         f = new FragmentHome();
+                        if (getSupportActionBar()!=null){
+                            getSupportActionBar().setTitle("Filme");
+                        }
                         break;
                     case R.id.menu_search:
                         f = new FragmentSearch();
+                        if (getSupportActionBar()!=null){
+                            getSupportActionBar().setTitle("Pencarian");
+                        }
                         break;
                     case R.id.menu_list:
                         f = new FragmentList();
+                        if (getSupportActionBar()!=null){
+                            getSupportActionBar().setTitle("Blog");
+                        }
                         break;
                     case R.id.menu_about:
                         f = new FragmentAbout();
+                        if (getSupportActionBar()!=null){
+                            getSupportActionBar().setTitle("Tentang Kami");
+                        }
                         break;
                 }
                 return getFragmentPage(f);

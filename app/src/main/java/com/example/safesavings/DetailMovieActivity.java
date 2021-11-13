@@ -31,7 +31,6 @@ import retrofit2.Callback;
 public class DetailMovieActivity extends AppCompatActivity {
     private ListEpisodeAnimeAdapter listEpisodeAnimeAdapter;
     public String id;
-    public String valRatingCount;
     private String TAG = "DetailMovieActivity";
 
 
@@ -46,15 +45,12 @@ public class DetailMovieActivity extends AppCompatActivity {
 
         id = intent.getStringExtra(SeasonAnimeAdapter.EXTRA_MESSAGE1);
         String title = intent.getStringExtra(SeasonAnimeAdapter.EXTRA_MESSAGE2);
-        String deskripsi = intent.getStringExtra(SeasonAnimeAdapter.EXTRA_MESSAGE3);
         String image = intent.getStringExtra(SeasonAnimeAdapter.EXTRA_MESSAGE4);
         String rating = intent.getStringExtra(SeasonAnimeAdapter.EXTRA_MESSAGE5);
 
         TextView title1 = findViewById(R.id.txtJudulAnime);
-        title1.setText("Nonton"+title);
+        title1.setText(title);
 
-        TextView deskripsi1 = findViewById(R.id.txtDetailDeskripsi);
-        deskripsi1.setText(deskripsi);
 
         ImageView headerbg = findViewById(R.id.imgDetailAnime);
         Glide.with(this).load(image).into(headerbg);
@@ -83,7 +79,12 @@ public class DetailMovieActivity extends AppCompatActivity {
                             List<ListEpisode> mListEpisode = response.body().getListEpisode();
                             listEpisodeAnimeAdapter = new ListEpisodeAnimeAdapter(DetailMovieActivity.this, mListEpisode);
                             recyclerView.setAdapter(listEpisodeAnimeAdapter);
-                            valRatingCount = response.body().getRatingCount();
+
+                            String valsinopsis = response.body().getSinopsis();
+                            TextView deskripsi1 = findViewById(R.id.txtDetailDeskripsi);
+                            deskripsi1.setText(valsinopsis);
+
+                            String valRatingCount = response.body().getRatingCount();
                             TextView txtRatingCount = findViewById(R.id.txtratingcount);
                             txtRatingCount.setText(valRatingCount);
 

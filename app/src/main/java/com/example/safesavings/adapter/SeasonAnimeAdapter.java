@@ -52,7 +52,7 @@ public class SeasonAnimeAdapter extends RecyclerView.Adapter<SeasonAnimeAdapter.
     @Override
     public void onBindViewHolder(@NonNull SeasonAnimeAdapter.MyViewHolder holder, int position) {
         String url = seasonList.get(position).getLinkId();
-        String title = seasonList.get(position).getTitle();
+        String title = "Nonton"+seasonList.get(position).getTitle();
         String deskripsi = seasonList.get(position).getSinopsis();
         String image = seasonList.get(position).getImage();
         String rating = seasonList.get(position).getRating();

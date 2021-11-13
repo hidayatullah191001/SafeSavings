@@ -4,49 +4,71 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp">
+    <ImageView
+        android:id="@+id/imgMovie"
+        android:layout_width="120dp"
+        android:layout_height="170dp"
+        android:src="@color/purple_700" />
 
-    <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/rating_season"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="0dp"
-        >
-        <RelativeLayout
+        android:layout_alignTop="@id/imgMovie"
+        android:layout_marginLeft="-40dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:background="@drawable/shape_view"
+        android:gravity="center"
+        android:text="7.0"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/keterangan"
+        android:layout_width="match_parent"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="15dp">
+            android:layout_height="150dp">
 
-            <ImageView
-                android:id="@+id/imgMovie"
-                android:layout_width="115dp"
-                android:layout_height="145dp"
-                android:src="@color/purple_700" />
-
-            <TextView
-                android:id="@+id/tvTitle"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_toRightOf="@id/imgMovie"
-                android:text="Judul Movie"
-                android:textColor="#000"
-                android:textSize="16sp" />
+                android:layout_height="match_parent"
+                android:padding="12dp">
 
-            <TextView
-                android:id="@+id/tvDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvTitle"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_toRightOf="@id/imgMovie"
-                android:maxLines="4"
-                android:text="INI DEKSRIPSI MOVIE" />
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Judul Movie"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTitle"
+                    android:layout_marginTop="16dp"
+                    android:textSize="12dp"
+                    android:maxLines="2"
+                    android:text="INI DEKSRIPSI MOVIE" />
 
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/selengkapnya"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvDescription"
+                    android:textSize="12dp"
+                    android:text="...Lihat Selengkapnya" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 </RelativeLayout>

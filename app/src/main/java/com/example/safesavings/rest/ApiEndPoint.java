@@ -10,8 +10,8 @@ import retrofit2.http.Path;
 
 public interface ApiEndPoint{
 
-    @GET("/")
-    Call<Response> getDataSeason();
+    @GET("/page/{page}")
+    Call<Response> getDataSeason(@Path("page") int page);
 
     @GET("/search/{title}/")
     Call<Response> getDataSearch(@Path("title") String title);

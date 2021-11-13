@@ -106,7 +106,7 @@
             android:layout_below="@id/txtJudulAnime"
             android:layout_marginTop="16dp"
             android:justificationMode="inter_word"
-            android:text="Deskripsi Movie"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="12sp" />
 

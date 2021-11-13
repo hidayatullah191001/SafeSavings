@@ -32,9 +32,6 @@
             android:name=".DetailMovieActivity"
             android:theme="@style/AppTheme"
             android:exported="true">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
         </activity>
 
     </application>
