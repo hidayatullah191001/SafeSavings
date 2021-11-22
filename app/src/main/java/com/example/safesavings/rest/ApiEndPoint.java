@@ -2,6 +2,7 @@ package com.example.safesavings.rest;
 
 import retrofit2.Call;
 import com.example.safesavings.model.Response;
+import com.example.safesavings.model.ResponseBlogDetail;
 import com.example.safesavings.model.ResponseDetail;
 import com.example.safesavings.model.ResponseBlog;
 
@@ -21,4 +22,7 @@ public interface ApiEndPoint{
 
     @GET("/anime/{id}/")
     Call<ResponseDetail> getDataDetailAnime(@Path("id") String id);
+
+    @GET("/blog/read/{id}")
+    Call<ResponseBlogDetail> getBlogDetail(@Path("id") String id);
 }
