@@ -13,14 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.safesavings.R;
-import com.example.safesavings.adapter.LatestAnimeAdapter;
-import com.example.safesavings.adapter.ListAnimeAdapter;
-import com.example.safesavings.adapter.SeasonAnimeAdapter;
-import com.example.safesavings.model.Latest;
-import com.example.safesavings.model.ListAnime;
-import com.example.safesavings.model.Response;
-import com.example.safesavings.model.ResponseList;
-import com.example.safesavings.model.Season;
+import com.example.safesavings.adapter.ListBlogAdapter;
+import com.example.safesavings.model.Blog;
+import com.example.safesavings.model.ResponseBlog;
 import com.example.safesavings.rest.ApiEndPoint;
 import com.example.safesavings.rest.ApiService;
 
@@ -29,8 +24,8 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class FragmentList extends Fragment {
-    private ListAnimeAdapter AdapterList;
+public class FragmentBlog extends Fragment {
+    private ListBlogAdapter AdapterList;
     private SearchView searchView;
     RecyclerView recyclerView;
     ApiEndPoint apiInterface;
@@ -38,28 +33,28 @@ public class FragmentList extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_blog, container, false);
         recyclerView = view.findViewById(R.id.rvlistanime);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        getDataFromListAnime();
+        getDataFromListBlog();
         return view;
 
     }
 
-    private void getDataFromListAnime() {
-        ApiService.endPoint().getDataListAnime()
-                .enqueue(new Callback<ResponseList>() {
+    private void getDataFromListBlog() {
+        ApiService.endPoint().getDataListBlog()
+                .enqueue(new Callback<ResponseBlog>() {
                     @Override
-                    public void onResponse(Call<ResponseList> call, retrofit2.Response<ResponseList> response) {
+                    public void onResponse(Call<ResponseBlog> call, retrofit2.Response<ResponseBlog> response) {
                         if (response.isSuccessful()){
-                            List<ListAnime> mListAnime = response.body().getListanime();
-                            AdapterList = new ListAnimeAdapter(getActivity(),mListAnime);
+                            List<Blog> mListBlog = response.body().getBlog();
+                            AdapterList = new ListBlogAdapter(getActivity(),mListBlog);
                             recyclerView.setAdapter(AdapterList);
                         }
                     }
                     @Override
-                    public void onFailure(Call<ResponseList> call, Throwable t) {
+                    public void onFailure(Call<ResponseBlog> call, Throwable t) {
 
                     }
                 });
