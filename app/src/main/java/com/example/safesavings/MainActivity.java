@@ -2,21 +2,14 @@ package com.example.safesavings;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.safesavings.fragment.FragmentAbout;
 import com.example.safesavings.fragment.FragmentHome;
-import com.example.safesavings.fragment.FragmentList;
+import com.example.safesavings.fragment.FragmentBlog;
 import com.example.safesavings.fragment.FragmentSearch;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -56,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.menu_list:
-                        f = new FragmentList();
+                        f = new FragmentBlog();
                         if (getSupportActionBar()!=null){
                             getSupportActionBar().setTitle("Blog");
                         }
