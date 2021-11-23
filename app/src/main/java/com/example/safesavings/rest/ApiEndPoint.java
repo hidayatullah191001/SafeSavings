@@ -3,6 +3,7 @@ package com.example.safesavings.rest;
 import retrofit2.Call;
 import com.example.safesavings.model.Response;
 import com.example.safesavings.model.ResponseDetail;
+import com.example.safesavings.model.ResponseDetailEps;
 import com.example.safesavings.model.ResponseList;
 
 import retrofit2.http.GET;
@@ -21,4 +22,7 @@ public interface ApiEndPoint{
 
     @GET("/anime/{id}/")
     Call<ResponseDetail> getDataDetailAnime(@Path("id") String id);
+
+    @GET("/anime/eps/{id}/")
+    Call<ResponseDetailEps> getDataDetailEpsAnime(@Path("id") String id);
 }
