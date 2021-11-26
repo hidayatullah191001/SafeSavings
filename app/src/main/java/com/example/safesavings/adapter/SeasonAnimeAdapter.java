@@ -2,6 +2,8 @@ package com.example.safesavings.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +13,15 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.bumptech.glide.Glide;
 import com.example.safesavings.DetailMovieActivity;
 import com.example.safesavings.R;
-import com.example.safesavings.model.Latest;
+import com.example.safesavings.favorite.FavoriteDatabase;
+import com.example.safesavings.favorite.FavoriteList;
+import com.example.safesavings.fragment.FragmentFavorite;
+import com.example.safesavings.fragment.FragmentHome;
 import com.example.safesavings.model.Season;
 
 import java.util.List;
@@ -26,6 +32,9 @@ public class SeasonAnimeAdapter extends RecyclerView.Adapter<SeasonAnimeAdapter.
 
     private Context context;
     private List<Season> seasonList;
+    private List<FavoriteList> favoriteLists;
+    private FavoriteDatabase db;
+    private String TAG = "MainActivity";
 
     public SeasonAnimeAdapter(Context context, List<Season> seasonList) {
         this.context = context;
@@ -51,6 +60,9 @@ public class SeasonAnimeAdapter extends RecyclerView.Adapter<SeasonAnimeAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull SeasonAnimeAdapter.MyViewHolder holder, int position) {
+        FavoriteList favoriteList = new FavoriteList();
+        int posisi = position;
+
         String url = seasonList.get(position).getLinkId();
         String title = "Nonton"+seasonList.get(position).getTitle();
         String deskripsi = seasonList.get(position).getSinopsis();
@@ -66,6 +78,34 @@ public class SeasonAnimeAdapter extends RecyclerView.Adapter<SeasonAnimeAdapter.
                 into(holder.imgPoster);
 
         String id = parseUrlToGetId(url);
+        Log.d(TAG, "onBindViewHolder: " + id);
+        db = Room.databaseBuilder(context.getApplicationContext(),
+                FavoriteDatabase.class, "favoriteDB").build();
+
+        if (FragmentHome.db.favoriteDao().isFavorite(id) == 1){
+            holder.fav_btn.setImageResource(R.drawable.ic_favorite);
+        }else{
+            holder.fav_btn.setImageResource(R.drawable.ic_favorite_border_24);
+            holder.fav_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int status_fav = 0;
+                    favoriteList.setIdanime(id);
+                    favoriteList.setJudul(title);
+                    favoriteList.setDeskripsi(deskripsi);
+                    favoriteList.setRating(rating);
+                    favoriteList.setImage(image);
+                    favoriteList.setStatus_fav(status_fav);
+
+                    if (FragmentHome.db.favoriteDao().isFavorite(id) != 1){
+                        holder.fav_btn.setImageResource(R.drawable.ic_favorite);
+                        insertData(favoriteList);
+                    }else{
+                        holder.fav_btn.setImageResource(R.drawable.ic_favorite_border_24);
+                    }
+                }
+            });
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,13 +134,29 @@ public class SeasonAnimeAdapter extends RecyclerView.Adapter<SeasonAnimeAdapter.
         }
     }
 
+    private void insertData(final FavoriteList favoriteList){
+
+        new AsyncTask<Void, Void, Long>(){
+            @Override
+            protected Long doInBackground(Void... voids) {
+                long status = db.favoriteDao().addData(favoriteList);
+                return status;
+            }
+
+            @Override
+            protected void onPostExecute(Long status) {
+                Toast.makeText(context, "Berhasil ditambahkan", Toast.LENGTH_SHORT).show();
+            }
+        }.execute();
+    }
+
     @Override
     public int getItemCount() {
         return seasonList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgPoster;
+        ImageView imgPoster, fav_btn;
         TextView tvTitle, tvDescription, ratingSeason;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -109,6 +165,7 @@ public class SeasonAnimeAdapter extends RecyclerView.Adapter<SeasonAnimeAdapter.
             tvTitle = itemView.findViewById(R.id.tvTitle);
             ratingSeason = itemView.findViewById(R.id.rating_season);
             tvDescription = itemView.findViewById(R.id.tvDescription);
+            fav_btn = itemView.findViewById(R.id.fav_btn);
         }
     }
 }

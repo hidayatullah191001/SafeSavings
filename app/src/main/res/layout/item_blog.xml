@@ -1,55 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_marginBottom="10dp"
+    android:background="#e1e1e1">
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <!-- Rest of LinearLayout -->
-
-        <ImageView
-            android:id="@+id/sportsImage"
+        android:layout_height="wrap_content"
+        android:background="#e1e1e1">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@color/purple_700"
-            android:scaleType="center"
-            android:adjustViewBounds="true"/>
+            android:layout_height="match_parent"
 
-        <!-- TextView elements -->
-        <TextView
-            android:id="@+id/tittle"
-            style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/sportsImage"
-            android:padding="8dp"
-            android:text="Tittle"
-            android:textColor="@color/black" />
+            android:padding="10dp">
 
-        <TextView
-            android:id="@+id/date"
-            style="@style/TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tittle"
-            android:padding="8dp"
-            android:text="date" />
+            <ImageView
+                android:id="@+id/blogImages"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@color/purple_200" />
 
-        <TextView
-            android:id="@+id/sub"
-            style="@style/TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/date"
-            android:textColor="?android:textColorSecondary"
-            android:padding="8dp"
-            android:text="sub" />
+            <TextView
+                android:id="@+id/tittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/blogImages"
+                android:layout_marginTop="10dp"
+                android:maxLines="2"
+                android:text="Ini judul"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bacaselengkapnya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tittle"
+                android:text="Baca Selengkapnya..."
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bacaselengkapnya"
+                android:layout_marginTop="8dp"
+                android:text="date"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/sub"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date"
+                android:layout_marginTop="10dp"
+                android:text="sub"
+                android:textColor="?android:textColorSecondary" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
 
 
 
-    </RelativeLayout>
-</androidx.cardview.widget.CardView>
+
+
+

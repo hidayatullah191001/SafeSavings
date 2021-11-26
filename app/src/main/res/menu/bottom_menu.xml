@@ -13,6 +13,10 @@
         android:icon="@drawable/list"
         android:title=""/>
     <item
+        android:id="@+id/menu_fav"
+        android:icon="@drawable/ic_favorite"
+        android:title=""/>
+    <item
         android:id="@+id/menu_about"
         android:icon="@drawable/about"
         android:title=""/>

@@ -48,7 +48,6 @@ public class ListEpisodeAnimeAdapter extends RecyclerView.Adapter<ListEpisodeAni
     public void onBindViewHolder(@NonNull ListEpisodeAnimeAdapter.MyViewHolder holder, int position) {
         String url = episodeList.get(position).getLink();
         String id = parseUrlToGetId(url);
-        Log.d("MainActivity", "onBindViewHolder: " + id);
         holder.txtEpisode.setText(episodeList.get(position).getEpisode());
         holder.txtTitleEpisode.setText(episodeList.get(position).getTitle());
         holder.txtDateEpisode.setText(episodeList.get(position).getDateUploaded());

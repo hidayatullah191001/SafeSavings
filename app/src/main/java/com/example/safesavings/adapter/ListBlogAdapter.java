@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.safesavings.DetailBlogActivity;
+import com.example.safesavings.DetailMovieActivity;
 import com.example.safesavings.R;
 import com.example.safesavings.model.Blog;
 
@@ -25,6 +26,8 @@ public class ListBlogAdapter extends RecyclerView.Adapter<ListBlogAdapter.MyView
 
     private Context context;
     private List<Blog> BlogList;
+    public static final String EXTRA_MESSAGE1 = "com.example.safesavings.MESSAGE1";
+    public static final String EXTRA_MESSAGE2 = "com.example.safesavings.MESSAGE2";
 
     public ListBlogAdapter(Context context, List<Blog> BlogList) {
         this.context = context;
@@ -45,20 +48,24 @@ public class ListBlogAdapter extends RecyclerView.Adapter<ListBlogAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull ListBlogAdapter.MyViewHolder holder, int position) {
+        String title = BlogList.get(position).getTitle();
         holder.tvTitle.setText(BlogList.get(position).getTitle());
         holder.tvSub.setText(BlogList.get(position).getSub());
         holder.date.setText(BlogList.get(position).getDate());
+
         Glide.with(context).
                 load(BlogList.get(position).getImage()).
                 into(holder.blogImages);
-        String url=BlogList.get(position).getLinkId();
-        String id=parseUrlToGetId(url);
-        Log.d("MainActivity","onBindViewHolder: "+ id);
+
+        String url = BlogList.get(position).getLinkId();
+        String id = parseUrlToGetId(url);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, DetailBlogActivity.class);
-                intent.putExtra("id",id );
+                Intent intent = new Intent(context, DetailBlogActivity.class);
+                intent.putExtra(EXTRA_MESSAGE1, id);
+                intent.putExtra(EXTRA_MESSAGE2, title);
                 context.startActivity(intent);
             }
         });
@@ -87,7 +94,7 @@ public class ListBlogAdapter extends RecyclerView.Adapter<ListBlogAdapter.MyView
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            blogImages = itemView.findViewById(R.id.sportsImage);
+            blogImages = itemView.findViewById(R.id.blogImages);
             tvTitle = itemView.findViewById(R.id.tittle);
             tvSub = itemView.findViewById(R.id.sub);
             date = itemView.findViewById(R.id.date);

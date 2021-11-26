@@ -2,12 +2,20 @@ package com.example.safesavings;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.safesavings.fragment.FragmentAbout;
+import com.example.safesavings.fragment.FragmentFavorite;
 import com.example.safesavings.fragment.FragmentHome;
 import com.example.safesavings.fragment.FragmentBlog;
 import com.example.safesavings.fragment.FragmentSearch;
@@ -54,10 +62,16 @@ public class MainActivity extends AppCompatActivity {
                             getSupportActionBar().setTitle("Blog");
                         }
                         break;
+                    case R.id.menu_fav:
+                        f = new FragmentFavorite();
+                        if (getSupportActionBar()!=null){
+                            getSupportActionBar().setTitle("Favorite");
+                        }
+                        break;
                     case R.id.menu_about:
                         f = new FragmentAbout();
                         if (getSupportActionBar()!=null){
-                            getSupportActionBar().setTitle("Tentang Kami");
+                            getSupportActionBar().setTitle("Tentang Aplikasi");
                         }
                         break;
                 }

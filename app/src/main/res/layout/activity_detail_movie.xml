@@ -7,11 +7,13 @@
     android:fillViewport="true"
     tools:context=".DetailMovieActivity"
     android:background="#222222">
+
     <RelativeLayout
         android:id="@+id/rldetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp">
+        android:padding="20dp"
+        tools:ignore="WebViewLayout">
 
         <ImageView
             android:id="@+id/imgDetailAnime"
@@ -88,22 +90,40 @@
 
         </androidx.cardview.widget.CardView>
 
+        <WebView
+            android:id="@+id/youtube_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/cardRating"
+            android:layout_marginTop="10dp" />
+
         <TextView
             android:id="@+id/txtJudulAnime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/cardRating"
+            android:layout_below="@id/youtube_web_view"
             android:layout_marginTop="10dp"
             android:text="INI JUDUL"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="bold" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtJudulAnime"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_genre" />
+
         <TextView
             android:id="@+id/txtDetailDeskripsi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtJudulAnime"
+            android:layout_below="@id/rvGenre"
             android:layout_marginTop="16dp"
             android:justificationMode="inter_word"
             android:text=""
@@ -124,12 +144,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp">
+
                     <TextView
                         android:id="@+id/txtJapan"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:text="Japanaese"/>
+                        android:text="Japanese"
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/valJapan"
@@ -318,7 +339,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvListEpisode"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="250dp"
                 android:layout_below="@id/txtDetailDeskripsi"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"

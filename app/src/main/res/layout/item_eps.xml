@@ -6,13 +6,15 @@
 
     <TextView
         android:id="@+id/quality"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:background="@drawable/shape_view_detail"
         android:gravity="center"
         android:text="360"
+        android:linksClickable="true"
+        android:autoLink="web"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
     <TextView
@@ -23,10 +25,10 @@
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/quality"
         android:gravity="center"
-        android:text="ZippyShare"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:text="@string/zippy"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/gdrive"
@@ -36,10 +38,10 @@
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/zippyshare"
         android:gravity="center"
-        android:text="GDrive"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:text="@string/gdrive"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/reupload"
@@ -49,8 +51,8 @@
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/gdrive"
         android:gravity="center"
-        android:text="ReUpload"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+        android:text="@string/reupload"
+        android:textColor="@color/white"
+        android:textSize="14sp"
         android:textStyle="bold" />
 </RelativeLayout>

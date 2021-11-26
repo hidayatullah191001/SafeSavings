@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.safesavings.adapter.ListBlogAdapter;
@@ -28,17 +29,25 @@ public class DetailBlogActivity extends AppCompatActivity {
     private String id;
     RecyclerView recyclerView;
     private ListBlogContentAdapter contentAdapter;
+    private String title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_blog);
-        Intent intent = getIntent();
 
-        id = intent.getStringExtra("id");
+        Intent intent = getIntent();
+        id = intent.getStringExtra(ListBlogAdapter.EXTRA_MESSAGE1);
+        title = intent.getStringExtra(ListBlogAdapter.EXTRA_MESSAGE2);
+
         recyclerView = findViewById(R.id.rvcontentblog);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         getdatadetailblog();
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(title);
+        }
+
     }
 
     private void getdatadetailblog() {
@@ -46,15 +55,21 @@ public class DetailBlogActivity extends AppCompatActivity {
                 .enqueue(new Callback<ResponseBlogDetail>() {
                     @Override
                     public void onResponse(Call<ResponseBlogDetail> call, retrofit2.Response<ResponseBlogDetail> response) {
-                        if (response.isSuccessful()){
+                        if (response.isSuccessful()) {
                             List<Content> mListContent = response.body().getContent();
                             contentAdapter = new ListBlogContentAdapter(DetailBlogActivity.this, mListContent);
                             recyclerView.setAdapter(contentAdapter);
-                            String image=response.body().getImageCover();
+
+                            String judul = response.body().getTitle();
+                            TextView txtjudul = findViewById(R.id.txtjudulblog);
+                            txtjudul.setText(judul);
+
+                            String image = response.body().getImageCover();
                             ImageView headerbg = findViewById(R.id.imgBlog);
                             Glide.with(DetailBlogActivity.this).load(image).into(headerbg);
                         }
                     }
+
                     @Override
                     public void onFailure(Call<ResponseBlogDetail> call, Throwable t) {
 

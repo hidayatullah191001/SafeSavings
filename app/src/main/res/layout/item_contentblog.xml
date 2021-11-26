@@ -2,14 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/isiBlog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textSize="11sp"
-        android:text="baseng"
-        android:textColor="@color/black"
-        />
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:gravity=""
+        android:textSize="12sp" />
 
 </RelativeLayout>
